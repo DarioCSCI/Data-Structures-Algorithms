@@ -44,7 +44,7 @@ public class SinglyLinkedList<T> {
   public Node<T> addFirst(T data) {
     Node<T> newNode = new Node<T>(data);
     if (size == 0)
-      tail = head;
+      head = null;
     size++;
     return this.head;
   }
