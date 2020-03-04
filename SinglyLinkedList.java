@@ -51,4 +51,33 @@ public class SinglyLinkedList<T> {
   
   public void removeFirst() {
     Node <T> newNode = new Node<>(e, null);
-    if (isEmpty
+    if (isEmpty())
+      head = newNode;
+    else
+      tail.setNext(newNode);
+    tail = newNode;
+    size++;
+  }
+  
+  public void removeLast() {
+    
+  }
+  
+  public String toString() {
+    Node<T> temp = this.head;
+    String output = "";
+    while(temp != null) {
+      output += temp.getData() + " ";
+      temp = temp.getNext();
+    }
+    return output;
+  }
+  
+  public int getSize() {
+    return size;
+  }
+  
+  public boolean isEmpty() {
+    return size == 0;
+  } 
+}
